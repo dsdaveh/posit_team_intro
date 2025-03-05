@@ -1,0 +1,13 @@
+---
+title: "Dice"
+format: html
+
+---
+
+# Dice
+
+```{r}
+roll <- sample(1:6, 2, replace = TRUE)
+roll
+```
+
