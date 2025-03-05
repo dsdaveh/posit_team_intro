@@ -41,4 +41,4 @@ ggplotly(roll_plt)
 
 ```
 
-
+Last roll = `r roll_results |> filter(throw == max(throw)) |> pull(result) |> unlist()`
