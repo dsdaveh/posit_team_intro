@@ -1,12 +1,46 @@
 ---
 title: "Dice"
-format: html
+format: 
+  html:
+    code-fold: true
+params:
+  n_die: 2
+  n_throws: 1000
 ---
 
-## Roll 2 Dice
+```{r}
+#| warning: false
+#| message: false
+library(ggplot2)
+library(dplyr)
+library(purrr)
+library(plotly)
+```
 
 ```{r}
-roll <- sample(1:6, 2, replace = TRUE)
-roll
+n_throw = params$n_throws
+n_die = params$n_die
+
+roll <- function() sample(1:6, n_die, replace = TRUE)
+
+roll_results <- tibble(
+  throw = 1:n_throw,
+  result = map(throw, ~roll()),
+  value = map_int(result, sum)
+)
 ```
+
+```{r}
+roll_plt <- roll_results |>
+  count(value) |> 
+  mutate(p = n / sum(n)) |> 
+  ggplot(aes(x = factor(value, levels = n_die:(n_die*6)), y = n, p = p)) +
+  geom_col(fill = 'steelblue') +
+  theme_minimal() +
+  labs(x = "Dice Sum", y = "Frequency", 
+       title = sprintf("Resulting Sums of %d Throws", n_throw))
+ggplotly(roll_plt)
+
+```
+
 

@@ -1,0 +1,14 @@
+name: tuesday-dice
+title: Tuesday-Dice
+username: dave.hurst
+account: dave.hurst
+server: connect-oha.acuna.cloud
+hostUrl: https://connect-oha.acuna.cloud/__api__
+appId: 19
+bundleId: 44
+url: https://connect-oha.acuna.cloud/TuesDice/
+version: 1
+quarto_version: 1.3.450
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE
