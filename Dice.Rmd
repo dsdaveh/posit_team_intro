@@ -1,26 +1,24 @@
 ---
 title: "Dice"
-format: 
-  html:
-    code-fold: true
+output: 
+  html_document:
+        code_folding: hide
 params:
   n_die: 2
   n_throws: 99
 ---
 
-```{r}
-#| warning: false
-#| message: false
+```{r warning=FALSE, message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(purrr)
 library(plotly)
+
+n_throw = params$n_throws
+n_die = params$n_die
 ```
 
 ```{r}
-n_throw = params$n_throws
-n_die = params$n_die
-
 roll <- function() sample(1:6, n_die, replace = TRUE)
 
 roll_results <- tibble(

@@ -1,0 +1,12 @@
+name: tues-dice-param
+title: Tues-Dice-param
+username: dave.hurst
+account: dave.hurst
+server: connect-oha.acuna.cloud
+hostUrl: https://connect-oha.acuna.cloud/__api__
+appId: 20
+bundleId: 45
+url: https://connect-oha.acuna.cloud/content/af90ffc7-0c22-441b-82d5-371d7085d79d/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
